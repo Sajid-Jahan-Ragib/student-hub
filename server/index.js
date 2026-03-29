@@ -4,6 +4,7 @@ import express from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import fs from 'node:fs/promises';
+import { randomBytes } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -46,6 +47,40 @@ const readSourceModeRaw = String(process.env.READ_SOURCE_MODE || 'auto')
 const readSourceMode = ['auto', 'json', 'postgres'].includes(readSourceModeRaw)
   ? readSourceModeRaw
   : 'auto';
+
+const adminEmail = String(process.env.ADMIN_LOGIN_EMAIL || '').trim();
+const adminPassword = String(process.env.ADMIN_LOGIN_PASSWORD || '').trim();
+const sessionTtlMs = Number(process.env.ADMIN_SESSION_TTL_MS || 28800000);
+const adminSessions = new Map();
+
+function generateSessionToken() {
+  return randomBytes(32).toString('hex');
+}
+
+function parseCookies(req) {
+  const cookieHeader = req.get('cookie') || '';
+  const result = {};
+  for (const part of cookieHeader.split(';')) {
+    const idx = part.indexOf('=');
+    if (idx === -1) continue;
+    const key = part.slice(0, idx).trim();
+    const val = part.slice(idx + 1).trim();
+    if (key) result[key] = decodeURIComponent(val);
+  }
+  return result;
+}
+
+function getAdminSession(req) {
+  const token = parseCookies(req)['admin_session'];
+  if (!token) return null;
+  const session = adminSessions.get(token);
+  if (!session) return null;
+  if (Date.now() - session.createdAt > sessionTtlMs) {
+    adminSessions.delete(token);
+    return null;
+  }
+  return { token, ...session };
+}
 
 const allowedOrigins = String(
   process.env.ALLOWED_ORIGINS ||
@@ -610,6 +645,53 @@ registerPut(
     res.json(nextData);
   })
 );
+
+app.post(`${V1_API_PREFIX}/admin/login`, (req, res) => {
+  const { email, password } = req.body || {};
+  if (
+    !email ||
+    !password ||
+    !adminEmail ||
+    !adminPassword ||
+    String(email).trim() !== adminEmail ||
+    String(password) !== adminPassword
+  ) {
+    sendError(res, 401, 'INVALID_CREDENTIALS', 'Invalid email or password.');
+    return;
+  }
+  const token = generateSessionToken();
+  adminSessions.set(token, { email: adminEmail, createdAt: Date.now() });
+  const maxAge = Math.floor(sessionTtlMs / 1000);
+  const isProduction = process.env.NODE_ENV === 'production';
+  const cookieParts = [
+    `admin_session=${token}`,
+    'HttpOnly',
+    'Path=/',
+    'SameSite=Strict',
+    `Max-Age=${maxAge}`,
+  ];
+  if (isProduction) cookieParts.push('Secure');
+  res.setHeader('Set-Cookie', cookieParts.join('; '));
+  res.json({ ok: true, authenticated: true, user: { email: adminEmail } });
+});
+
+app.get(`${V1_API_PREFIX}/admin/auth-status`, (req, res) => {
+  const session = getAdminSession(req);
+  if (!session) {
+    res.json({ ok: true, authenticated: false });
+    return;
+  }
+  res.json({ ok: true, authenticated: true, user: { email: session.email } });
+});
+
+app.post(`${V1_API_PREFIX}/admin/logout`, (req, res) => {
+  const session = getAdminSession(req);
+  if (session) {
+    adminSessions.delete(session.token);
+  }
+  res.setHeader('Set-Cookie', 'admin_session=; HttpOnly; Path=/; SameSite=Strict; Max-Age=0');
+  res.json({ ok: true, authenticated: false });
+});
 
 app.use((err, _req, res, next) => {
   void next;

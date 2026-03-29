@@ -38,6 +38,11 @@ const PendingCourses = lazy(() =>
   import('./components/Courses/PendingCourses').then((m) => ({ default: m.PendingCourses }))
 );
 
+// Disable browser's automatic scroll restoration so the SPA controls it.
+if (typeof window !== 'undefined' && window.history.scrollRestoration !== 'manual') {
+  window.history.scrollRestoration = 'manual';
+}
+
 function App() {
   const { currentScreen, setCurrentScreen, loading } = useUIContext();
   const { user } = useUserContext();
@@ -58,13 +63,18 @@ function App() {
     setCurrentScreen((prev) => (prev === nextScreen ? prev : nextScreen));
   }, [location.pathname, navigate, setCurrentScreen]);
 
+  const locationRef = useRef(location);
+  useEffect(() => {
+    locationRef.current = location;
+  });
+
   useEffect(() => {
     // Ignore URL-synced updates and only navigate for user-triggered screen changes.
     if (currentScreen === syncedScreenRef.current) {
       return;
     }
 
-    const currentPath = normalizePath(location.pathname);
+    const currentPath = normalizePath(locationRef.current.pathname);
     const targetPath =
       currentScreen === 'admin' && currentPath.startsWith('/admin')
         ? currentPath
@@ -73,7 +83,12 @@ function App() {
     if (currentPath !== targetPath) {
       navigate(targetPath);
     }
-  }, [currentScreen, location.pathname, navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentScreen, navigate]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentScreen]);
 
   useEffect(() => {
     if (!menuOpen) {

@@ -53,10 +53,13 @@ import {
   isKnownAdminToolPath,
   normalizeAdminPath,
 } from './adminRoutes';
+import { useAuth } from '../../context/AuthContext';
+import { LoginForm } from '../Login/LoginForm';
 
 export function Admin() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const {
     user,
     fees,
@@ -230,8 +233,13 @@ export function Admin() {
     adminRouteHydratedRef.current = true;
   }, [location.pathname, navigate]);
 
+  const adminLocationRef = useRef(location);
   useEffect(() => {
-    const currentPath = normalizeAdminPath(location.pathname);
+    adminLocationRef.current = location;
+  });
+
+  useEffect(() => {
+    const currentPath = normalizeAdminPath(adminLocationRef.current.pathname);
     if (currentPath !== '/admin' && !currentPath.startsWith('/admin/')) {
       return;
     }
@@ -250,7 +258,8 @@ export function Admin() {
     if (currentPath !== targetPath) {
       navigate(targetPath);
     }
-  }, [activeTool, location.pathname, navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTool, navigate]);
 
   const isCriticalSaveInProgress =
     profileJsonSaving ||
@@ -2930,6 +2939,21 @@ export function Admin() {
 
     setActiveTool(next.tool);
   };
+
+  if (authLoading) {
+    return (
+      <div className="page-container">
+        <TopBar title="Admin" onBack={handleAdminBack} />
+        <div className="page-content">
+          <p className="pending-alert">Checking authentication...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <LoginForm />;
+  }
 
   if (!user) {
     return (
