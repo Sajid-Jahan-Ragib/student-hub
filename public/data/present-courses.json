@@ -1,0 +1,32 @@
+{
+  "presentCourses": [
+    {
+      "code": "ACC 2102",
+      "name": "Accounting for Manufacturing Concerns",
+      "credits": 3,
+      "instructor": "Dr. Shahed Ahmed",
+      "status": "active"
+    },
+    {
+      "code": "BUS 2102",
+      "name": "Business & Commercial Laws",
+      "credits": 3,
+      "instructor": "Prof. Fatima Iqbal",
+      "status": "active"
+    },
+    {
+      "code": "QUA 3104",
+      "name": "Inferential Statistics",
+      "credits": 3,
+      "instructor": "Dr. Ashraf Rahman",
+      "status": "active"
+    },
+    {
+      "code": "SOC 2101",
+      "name": "Basics of Social Sciences",
+      "credits": 3,
+      "instructor": "Assoc. Prof. Mirza Hassan",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum FeeStatus {
+  ok
+  due
+}
+
+enum SgpaBand {
+  high
+  mid
+  low
+}
+
+model UserProfile {
+  id                String   @id @default(cuid())
+  name              String
+  studentId         String   @map("student_id")
+  department        String
+  program           String
+  intake            String
+  email             String
+  mobile            String?
+  gender            String?
+  bloodGroup        String?  @map("blood_group")
+  admissionSemester String?  @map("admission_semester")
+  avatar            String?
+  avatarSmall       String?  @map("avatar_small")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  @@map("user_profiles")
+}
+
+model Course {
+  id        String   @id @default(cuid())
+  code      String
+  name      String
+  semester  String
+  type      String
+  credits   Float
+  intake    String?
+  section   String?
+  result    String?
+  takeAs    String?  @map("take_as")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([code, semester, section], map: "courses_code_semester_section_key")
+  @@index([semester], map: "courses_semester_idx")
+  @@map("courses")
+}
+
+model PendingCourse {
+  id        String   @id @default(cuid())
+  code      String
+  name      String
+  credits   Float
+  reason    String?
+  status    String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([status], map: "pending_courses_status_idx")
+  @@map("pending_courses")
+}
+
+model PresentCourse {
+  id         String   @id @default(cuid())
+  code       String
+  name       String
+  credits    Float
+  instructor String?
+  status     String?
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@index([status], map: "present_courses_status_idx")
+  @@map("present_courses")
+}
+
+model FeeRecord {
+  id           String    @id @default(cuid())
+  semester     String
+  demand       Int
+  waiver       Int
+  paid         Int
+  status       FeeStatus
+  statusText   String?   @map("status_text")
+  statusAmount Int       @map("status_amount")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@unique([semester], map: "fees_semester_key")
+  @@map("fees")
+}
+
+model CalendarEvent {
+  id        String   @id @default(cuid())
+  title     String
+  dateText  String   @map("date_text")
+  tagType   String   @map("tag_type")
+  tagText   String   @map("tag_text")
+  startDate DateTime @map("start_date") @db.Date
+  endDate   DateTime @map("end_date") @db.Date
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([startDate], map: "calendar_events_start_date_idx")
+  @@map("calendar_events")
+}
+
+model Download {
+  id        String   @id @default(cuid())
+  title     String
+  category  String
+  url       String
+  date      DateTime @db.Date
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([date], map: "downloads_date_idx")
+  @@map("downloads")
+}
+
+model AttendanceRecord {
+  id         String   @id @default(cuid())
+  courseCode String   @map("course_code")
+  courseName String   @map("course_name")
+  present    Int
+  absent     Int
+  percentage Float
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@index([courseCode], map: "attendance_course_code_idx")
+  @@map("attendance")
+}
+
+model ResultRecord {
+  id        String   @id @default(cuid())
+  semester  String
+  sgpa      Float
+  cgpa      Float
+  sgpaGrade SgpaBand @map("sgpa_grade")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([semester], map: "results_semester_key")
+  @@map("results")
+}
+
+model RoutineSemester {
+  id        String         @id @default(cuid())
+  semester  String         @unique
+  entries   RoutineEntry[]
+  createdAt DateTime       @default(now()) @map("created_at")
+  updatedAt DateTime       @updatedAt @map("updated_at")
+
+  @@map("routine_semesters")
+}
+
+model RoutineEntry {
+  id                String          @id @default(cuid())
+  routineSemesterId String          @map("routine_semester_id")
+  routineSemester   RoutineSemester @relation(fields: [routineSemesterId], references: [id], onDelete: Cascade)
+  day               String
+  time              String
+  courseCode        String          @map("course_code")
+  facultyCode       String          @map("faculty_code")
+  room              String
+  sortOrder         Int             @default(0) @map("sort_order")
+  createdAt         DateTime        @default(now()) @map("created_at")
+  updatedAt         DateTime        @updatedAt @map("updated_at")
+
+  @@index([routineSemesterId], map: "routine_entries_semester_id_idx")
+  @@map("routine_entries")
+}
+
+model MarksSemester {
+  id        String        @id @default(cuid())
+  semester  String        @unique
+  subjects  MarkSubject[]
+  createdAt DateTime      @default(now()) @map("created_at")
+  updatedAt DateTime      @updatedAt @map("updated_at")
+
+  @@map("marks_semesters")
+}
+
+model MarkSubject {
+  id              String        @id @default(cuid())
+  marksSemesterId String        @map("marks_semester_id")
+  marksSemester   MarksSemester @relation(fields: [marksSemesterId], references: [id], onDelete: Cascade)
+  code            String
+  name            String
+  mark            Int?
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime      @updatedAt @map("updated_at")
+
+  @@unique([marksSemesterId, code], map: "mark_subjects_semester_code_key")
+  @@index([marksSemesterId], map: "mark_subjects_semester_id_idx")
+  @@map("mark_subjects")
+}

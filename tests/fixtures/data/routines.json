@@ -1,0 +1,16 @@
+{
+  "semesters": [
+    {
+      "semester": "1",
+      "routine": [
+        {
+          "day": "Monday",
+          "time": "10:00",
+          "course": "CS101",
+          "fc": "Dr. Smith",
+          "room": "101"
+        }
+      ]
+    }
+  ]
+}

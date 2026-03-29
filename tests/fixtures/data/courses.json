@@ -1,0 +1,30 @@
+{
+  "courseNameMap": {
+    "CS101": "Intro to CS",
+    "CS102": "Data Structures"
+  },
+  "courses": [
+    {
+      "code": "CS101",
+      "name": "Intro to CS",
+      "semester": "1",
+      "type": "",
+      "credits": 0,
+      "intake": "",
+      "section": "",
+      "result": "",
+      "takeAs": ""
+    },
+    {
+      "code": "CS102",
+      "name": "Data Structures",
+      "semester": "1",
+      "type": "",
+      "credits": 0,
+      "intake": "",
+      "section": "",
+      "result": "",
+      "takeAs": ""
+    }
+  ]
+}

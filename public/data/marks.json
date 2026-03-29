@@ -1,0 +1,124 @@
+{
+  "semesters": [
+    {
+      "semester": "Spring, 2026",
+      "subjects": [
+        {
+          "code": "ACC 2102",
+          "name": "Accounting for Manufacturing Concerns",
+          "mark": 100
+        },
+        {
+          "code": "BUS 2102",
+          "name": "Business & Commercial Laws",
+          "mark": 100
+        },
+        {
+          "code": "QUA 3104",
+          "name": "Inferential Statistics",
+          "mark": 100
+        },
+        {
+          "code": "SOC 2101",
+          "name": "Basics of Social Sciences",
+          "mark": 100
+        }
+      ]
+    },
+    {
+      "semester": "Fall, 2025",
+      "subjects": [
+        {
+          "code": "BUS 2105",
+          "name": "Business Communication",
+          "mark": 40
+        },
+        {
+          "code": "ECO 2102",
+          "name": "Macroeconomics",
+          "mark": 46
+        },
+        {
+          "code": "FIN 2101",
+          "name": "Principles of Business Finance",
+          "mark": 18
+        },
+        {
+          "code": "QUA 2102",
+          "name": "Mathematics for Business Decisions",
+          "mark": 33
+        },
+        {
+          "code": "QUA 2103",
+          "name": "Summary Statistics",
+          "mark": 17
+        }
+      ]
+    },
+    {
+      "semester": "Spring, 2025",
+      "subjects": [
+        {
+          "code": "ACC 1101",
+          "name": "Principles of Accounting",
+          "mark": 57
+        },
+        {
+          "code": "ECO 1101",
+          "name": "Microeconomics",
+          "mark": 72
+        },
+        {
+          "code": "MGT 1101",
+          "name": "Principles of Management",
+          "mark": 52
+        },
+        {
+          "code": "MKT 1101",
+          "name": "Principles of Marketing",
+          "mark": 67
+        },
+        {
+          "code": "QUA 1101",
+          "name": "Fundamentals of Mathematics",
+          "mark": 72
+        }
+      ]
+    },
+    {
+      "semester": "Fall, 2024",
+      "subjects": [
+        {
+          "code": "BUS 1101",
+          "name": "Introduction to Business and its Environment",
+          "mark": 62
+        },
+        {
+          "code": "ENG 1101",
+          "name": "Functional English",
+          "mark": 30
+        },
+        {
+          "code": "HUM 1101",
+          "name": "History of the Emergence of Independent Bangladesh",
+          "mark": 67
+        },
+        {
+          "code": "HUM 1102",
+          "name": "Bangla Language",
+          "mark": 42
+        },
+        {
+          "code": "ICT 1101",
+          "name": "Computer and its Application in Business-Theory",
+          "mark": 62
+        },
+        {
+          "code": "ICT 1102",
+          "name": "Computer and its Application in Business-Lab",
+          "mark": 42
+        }
+      ]
+    }
+  ]
+}

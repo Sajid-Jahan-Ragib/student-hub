@@ -1,0 +1,380 @@
+{
+  "events": [
+    {
+      "title": "Orientation and commencement of classes of Spring Semester 2026",
+      "dateText": "01 Jan, 2026 (Thursday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-01-01",
+      "end": "2026-01-01"
+    },
+    {
+      "title": "1st Installment Fees Payment for confirmation of registration (without late fee)",
+      "dateText": "01 Jan, 2026 (Thursday) - 14 Jan, 2026 (Wednesday)",
+      "tagType": "tuition",
+      "tagText": "Tuition Fee",
+      "start": "2026-01-01",
+      "end": "2026-01-14"
+    },
+    {
+      "title": "Submission of application for tuition fees waiver",
+      "dateText": "06 Jan, 2026 (Tuesday) - 15 Jan, 2026 (Thursday)",
+      "tagType": "waiver",
+      "tagText": "Waiver",
+      "start": "2026-01-06",
+      "end": "2026-01-15"
+    },
+    {
+      "title": "Deadline of course(s) add/drop and semester withdrawal",
+      "dateText": "14 Jan, 2026 (Wednesday)",
+      "tagType": "registration",
+      "tagText": "Registration",
+      "start": "2026-01-14",
+      "end": "2026-01-14"
+    },
+    {
+      "title": "Payment for confirmation of registration (with late fee)",
+      "dateText": "15 Jan, 2026 (Thursday) - 21 Jan, 2026 (Wednesday)",
+      "tagType": "tuition",
+      "tagText": "Tuition Fee",
+      "start": "2026-01-15",
+      "end": "2026-01-21"
+    },
+    {
+      "title": "Faculty and Staff Development Week",
+      "dateText": "18 Jan, 2026 (Sunday) - 24 Jan, 2026 (Saturday)",
+      "tagType": "administrative",
+      "tagText": "Administrative",
+      "start": "2026-01-18",
+      "end": "2026-01-24"
+    },
+    {
+      "title": "Last day of Grade Submission of Incomplete Grades of Fall Semester 2025",
+      "dateText": "19 Jan, 2026 (Monday)",
+      "tagType": "result",
+      "tagText": "Result",
+      "start": "2026-01-19",
+      "end": "2026-01-19"
+    },
+    {
+      "title": "Publication of final list of registered students Spring Semester 2026",
+      "dateText": "22 Jan, 2026 (Thursday)",
+      "tagType": "registration",
+      "tagText": "Registration",
+      "start": "2026-01-22",
+      "end": "2026-01-22"
+    },
+    {
+      "title": "Club Member Collection Week",
+      "dateText": "22 Jan, 2026 (Thursday) - 26 Jan, 2026 (Monday)",
+      "tagType": "activity",
+      "tagText": "Student Activity",
+      "start": "2026-01-22",
+      "end": "2026-01-26"
+    },
+    {
+      "title": "Saraswati Puja Holiday",
+      "dateText": "23 Jan, 2026 (Friday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-01-23",
+      "end": "2026-01-23"
+    },
+    {
+      "title": "Census Day",
+      "dateText": "25 Jan, 2026 (Sunday)",
+      "tagType": "administrative",
+      "tagText": "Administrative",
+      "start": "2026-01-25",
+      "end": "2026-01-25"
+    },
+    {
+      "title": "Declaration of tuition fee waiver list",
+      "dateText": "28 Jan, 2026 (Wednesday)",
+      "tagType": "waiver",
+      "tagText": "Waiver",
+      "start": "2026-01-28",
+      "end": "2026-01-28"
+    },
+    {
+      "title": "Parents Day",
+      "dateText": "31 Jan, 2026 (Saturday)",
+      "tagType": "event",
+      "tagText": "Event",
+      "start": "2026-01-31",
+      "end": "2026-01-31"
+    },
+    {
+      "title": "R U OK!",
+      "dateText": "01 Feb, 2026 (Sunday) - 05 Feb, 2026 (Thursday)",
+      "tagType": "event",
+      "tagText": "Event",
+      "start": "2026-02-01",
+      "end": "2026-02-05"
+    },
+    {
+      "title": "Payment of tuition fees: 2nd Installment (at least 50% of total dues)",
+      "dateText": "01 Feb, 2026 (Sunday) - 12 Feb, 2026 (Thursday)",
+      "tagType": "tuition",
+      "tagText": "Tuition Fee",
+      "start": "2026-02-01",
+      "end": "2026-02-12"
+    },
+    {
+      "title": "Deans Award for Students",
+      "dateText": "02 Feb, 2026 (Monday)",
+      "tagType": "event",
+      "tagText": "Event",
+      "start": "2026-02-02",
+      "end": "2026-02-02"
+    },
+    {
+      "title": "Shab-e-Barat Holiday",
+      "dateText": "04 Feb, 2026 (Wednesday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-02-04",
+      "end": "2026-02-04"
+    },
+    {
+      "title": "Deadline of submission of student attendance report before Midterm Examination",
+      "dateText": "10 Feb, 2026 (Tuesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-02-10",
+      "end": "2026-02-10"
+    },
+    {
+      "title": "Last day of classes before Midterm Examination",
+      "dateText": "11 Feb, 2026 (Wednesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-02-11",
+      "end": "2026-02-11"
+    },
+    {
+      "title": "Preparatory Leave for Midterm Examination",
+      "dateText": "12 Feb, 2026 (Thursday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-02-12",
+      "end": "2026-02-12"
+    },
+    {
+      "title": "Midterm Examination",
+      "dateText": "13 Feb, 2026 (Friday) - 20 Feb, 2026 (Friday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-02-13",
+      "end": "2026-02-20"
+    },
+    {
+      "title": "Shaheed Dibosh and International Mother Language Day Holiday",
+      "dateText": "21 Feb, 2026 (Saturday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-02-21",
+      "end": "2026-02-21"
+    },
+    {
+      "title": "Classes resume after Midterm Examination",
+      "dateText": "22 Feb, 2026 (Sunday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-02-22",
+      "end": "2026-02-22"
+    },
+    {
+      "title": "Deadline of submission of application for Supplementary Midterm Examination",
+      "dateText": "24 Feb, 2026 (Tuesday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-02-24",
+      "end": "2026-02-24"
+    },
+    {
+      "title": "Supplementary Midterm Examination",
+      "dateText": "04 Mar, 2026 (Wednesday) - 08 Mar, 2026 (Sunday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-03-04",
+      "end": "2026-03-08"
+    },
+    {
+      "title": "Deadline of submission of Midterm Examination Results",
+      "dateText": "11 Mar, 2026 (Wednesday)",
+      "tagType": "result",
+      "tagText": "Result",
+      "start": "2026-03-11",
+      "end": "2026-03-11"
+    },
+    {
+      "title": "Eid-ul-Fitr Holidays",
+      "dateText": "15 Mar, 2026 (Sunday) - 24 Mar, 2026 (Tuesday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-03-15",
+      "end": "2026-03-24"
+    },
+    {
+      "title": "Independence and National Day Holiday",
+      "dateText": "26 Mar, 2026 (Thursday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-03-26",
+      "end": "2026-03-26"
+    },
+    {
+      "title": "Sports Week",
+      "dateText": "01 Apr, 2026 (Wednesday) - 07 Apr, 2026 (Tuesday)",
+      "tagType": "cocurricular",
+      "tagText": "Co-curricular",
+      "start": "2026-04-01",
+      "end": "2026-04-07"
+    },
+    {
+      "title": "Pre-Registration for Summer Semester 2026",
+      "dateText": "01 Apr, 2026 (Wednesday) - 08 Apr, 2026 (Wednesday)",
+      "tagType": "registration",
+      "tagText": "Registration",
+      "start": "2026-04-01",
+      "end": "2026-04-08"
+    },
+    {
+      "title": "Payment of tuition fees: Final Installment (without late fee)",
+      "dateText": "01 Apr, 2026 (Wednesday) - 16 Apr, 2026 (Thursday)",
+      "tagType": "tuition",
+      "tagText": "Tuition Fee",
+      "start": "2026-04-01",
+      "end": "2026-04-16"
+    },
+    {
+      "title": "Teachers Evaluation",
+      "dateText": "12 Apr, 2026 (Sunday) - 18 Apr, 2026 (Saturday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-04-12",
+      "end": "2026-04-18"
+    },
+    {
+      "title": "Bangla Noboborsho Holiday",
+      "dateText": "14 Apr, 2026 (Tuesday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-04-14",
+      "end": "2026-04-14"
+    },
+    {
+      "title": "Research Showcase Week",
+      "dateText": "15 Apr, 2026 (Wednesday) - 21 Apr, 2026 (Tuesday)",
+      "tagType": "cocurricular",
+      "tagText": "Co-curricular",
+      "start": "2026-04-15",
+      "end": "2026-04-21"
+    },
+    {
+      "title": "Deadline of submission of student attendance report before Final Examination",
+      "dateText": "16 Apr, 2026 (Thursday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-04-16",
+      "end": "2026-04-16"
+    },
+    {
+      "title": "Payment of tuition fees: Final Installment (with late fee)",
+      "dateText": "16 Apr, 2026 (Thursday) - 22 Apr, 2026 (Wednesday)",
+      "tagType": "tuition",
+      "tagText": "Tuition Fee",
+      "start": "2026-04-16",
+      "end": "2026-04-22"
+    },
+    {
+      "title": "Last day of classes before Final Examination",
+      "dateText": "21 Apr, 2026 (Tuesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-04-21",
+      "end": "2026-04-21"
+    },
+    {
+      "title": "Preparatory Leave for Final Examination",
+      "dateText": "22 Apr, 2026 (Wednesday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-04-22",
+      "end": "2026-04-22"
+    },
+    {
+      "title": "Final Examination",
+      "dateText": "23 Apr, 2026 (Thursday) - 30 Apr, 2026 (Thursday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-04-23",
+      "end": "2026-04-30"
+    },
+    {
+      "title": "May Day and Buddha Purnima Holiday",
+      "dateText": "01 May, 2026 (Friday)",
+      "tagType": "holiday",
+      "tagText": "Holiday",
+      "start": "2026-05-01",
+      "end": "2026-05-01"
+    },
+    {
+      "title": "Deadline of submission of application for Supplementary Final Examination",
+      "dateText": "03 May, 2026 (Sunday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-05-03",
+      "end": "2026-05-03"
+    },
+    {
+      "title": "Deadline of submission of Final Grade",
+      "dateText": "03 May, 2026 (Sunday)",
+      "tagType": "result",
+      "tagText": "Result",
+      "start": "2026-05-03",
+      "end": "2026-05-03"
+    },
+    {
+      "title": "Final Results publication",
+      "dateText": "04 May, 2026 (Monday)",
+      "tagType": "result",
+      "tagText": "Result",
+      "start": "2026-05-04",
+      "end": "2026-05-04"
+    },
+    {
+      "title": "Semester Break",
+      "dateText": "05 May, 2026 (Tuesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-05-05",
+      "end": "2026-05-05"
+    },
+    {
+      "title": "Orientation and commencement of classes of Summer Semester 2026",
+      "dateText": "06 May, 2026 (Wednesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-05-06",
+      "end": "2026-05-06"
+    },
+    {
+      "title": "Academic Calendar",
+      "dateText": "10 May, 2026 (Sunday) - 13 May, 2026 (Wednesday)",
+      "tagType": "academic",
+      "tagText": "Academic",
+      "start": "2026-05-09",
+      "end": "2026-05-09"
+    },
+    {
+      "title": "Supplementary Final Examination",
+      "dateText": "10 May, 2026 (Sunday) - 13 May, 2026 (Wednesday)",
+      "tagType": "examination",
+      "tagText": "Examination",
+      "start": "2026-05-10",
+      "end": "2026-05-13"
+    }
+  ]
+}

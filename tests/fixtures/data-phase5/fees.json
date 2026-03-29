@@ -1,0 +1,13 @@
+{
+  "fees": [
+    {
+      "semester": "Spring, 2026",
+      "demand": 50000,
+      "waiver": 0,
+      "paid": 50000,
+      "status": "ok",
+      "statusText": "Paid",
+      "statusAmount": 0
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "semesters": [
+    {
+      "semester": "Spring, 2026",
+      "routine": [
+        {
+          "day": "MON",
+          "time": "08:15 AM to 09:45 AM",
+          "course": "SOC 2101",
+          "fc": "MIR",
+          "room": "4404"
+        },
+        {
+          "day": "MON",
+          "time": "09:45 AM to 11:15 AM",
+          "course": "QUA 3104",
+          "fc": "ARS",
+          "room": "4404"
+        },
+        {
+          "day": "TUE",
+          "time": "11:15 AM to 12:45 PM",
+          "course": "ACC 2102",
+          "fc": "SHA",
+          "room": "4904"
+        },
+        {
+          "day": "TUE",
+          "time": "01:15 PM to 02:45 PM",
+          "course": "BUS 2102",
+          "fc": "FI",
+          "room": "4904"
+        },
+        {
+          "day": "WED",
+          "time": "02:45 PM to 04:15 PM",
+          "course": "QUA 3104",
+          "fc": "ARS",
+          "room": "4201"
+        },
+        {
+          "day": "WED",
+          "time": "04:15 PM to 05:45 PM",
+          "course": "SOC 2101",
+          "fc": "MIR",
+          "room": "4201"
+        },
+        {
+          "day": "THR",
+          "time": "02:45 PM to 04:15 PM",
+          "course": "BUS 2102",
+          "fc": "FI",
+          "room": "4904"
+        },
+        {
+          "day": "THR",
+          "time": "04:15 PM to 05:45 PM",
+          "course": "ACC 2102",
+          "fc": "SHA",
+          "room": "4904"
+        }
+      ]
+    }
+  ]
+}

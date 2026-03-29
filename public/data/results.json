@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "semester": "Spring, 2026",
+      "sgpa": 4,
+      "cgpa": 2.46,
+      "sgpaGrade": "high"
+    },
+    {
+      "semester": "Fall, 2025",
+      "sgpa": 0.85,
+      "cgpa": 2.06,
+      "sgpaGrade": "low"
+    },
+    {
+      "semester": "Spring, 2025",
+      "sgpa": 3.1,
+      "cgpa": 2.64,
+      "sgpaGrade": "high"
+    },
+    {
+      "semester": "Fall, 2024",
+      "sgpa": 2.23,
+      "cgpa": 2.23,
+      "sgpaGrade": "mid"
+    }
+  ]
+}
