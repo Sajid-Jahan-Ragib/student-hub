@@ -31,6 +31,7 @@ import {
 } from './validation/requestValidators.js';
 
 const app = express();
+app.set('trust proxy', 1);
 const port = process.env.PORT || 3001;
 const LEGACY_API_PREFIX = '/api';
 const V1_API_PREFIX = '/api/v1';
